@@ -1,0 +1,33 @@
+{
+  "name": "halal-discord-bot",
+  "version": "0.1.0",
+  "description": "Open-source Discord bot for Shariah-compliant stock screening. Powered by Halal Terminal API.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "register": "node src/register.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "undici": "^6.20.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "halal",
+    "shariah",
+    "islamic-finance",
+    "stocks",
+    "halalterminal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goww7/halal-discord-bot"
+  }
+}
