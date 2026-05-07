@@ -8,6 +8,14 @@ function apiKey() {
   return key;
 }
 
+export class HalalApiError extends Error {
+  constructor(msg, status, code) {
+    super(msg);
+    this.status = status;
+    this.code = code;
+  }
+}
+
 async function call(method, path, body) {
   const url = `${BASE_URL}${path}`;
   const res = await request(url, {
@@ -15,7 +23,7 @@ async function call(method, path, body) {
     headers: {
       'X-API-Key': apiKey(),
       'Content-Type': 'application/json',
-      'User-Agent': 'halal-discord-bot/0.1',
+      'User-Agent': 'halal-discord-bot/0.2',
     },
     body: body ? JSON.stringify(body) : undefined,
   });
@@ -23,8 +31,8 @@ async function call(method, path, body) {
   let json;
   try { json = JSON.parse(text); } catch { json = { raw: text }; }
   if (res.statusCode >= 400) {
-    const msg = json?.error || json?.message || `HTTP ${res.statusCode}`;
-    throw new Error(msg);
+    const msg = json?.message || json?.error || `HTTP ${res.statusCode}`;
+    throw new HalalApiError(msg, res.statusCode, json?.code);
   }
   return json;
 }
