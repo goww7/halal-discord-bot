@@ -106,6 +106,20 @@ This bot returns automated screening results from public methodologies; it is **
 
 ---
 
+## Related projects
+
+Other open-source tools in the Halal Terminal ecosystem:
+
+| Project | What it is |
+|---|---|
+| [**halal-portfolio-tracker**](https://github.com/goww7/halal-portfolio-tracker) | Next.js portfolio compliance tracker (one-click Vercel deploy) |
+| [**halal-pine**](https://github.com/goww7/halal-pine) | TradingView Pine v5 indicator with daily-refreshed compliance data |
+| [**halalterminal-claude-skills**](https://github.com/goww7/halalterminal-claude-skills) | Claude Code plugin with screening skills + portfolio-builder subagent |
+| [**halalterminal-mcp**](https://github.com/goww7/halalterminal-mcp) | MCP server for any MCP-compatible client (Cursor, Cline, Codex…) |
+| [**yassir-oss**](https://github.com/goww7/yassir-oss) | Open-source ReAct agent for financial research |
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
