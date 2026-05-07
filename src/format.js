@@ -12,8 +12,9 @@ const FOOTER = {
 export function screenEmbed(symbol, result) {
   const r = result?.result || result || {};
   const status = (r.status || r.compliance || r.verdict || 'unknown').toString();
-  const isPass = /pass|compliant|halal/i.test(status);
-  const isFail = /fail|non-?compliant|haram/i.test(status);
+  // Order matters: "non-compliant" contains "compliant", so check fail first.
+  const isFail = /fail|non[\s-]?compliant|haram|reject/i.test(status);
+  const isPass = !isFail && /pass|compliant|halal|accept/i.test(status);
   const color = isPass ? COLOR_PASS : isFail ? COLOR_FAIL : COLOR_WARN;
   const label = isPass ? '✅ Halal' : isFail ? '❌ Non-compliant' : `⚠️ ${status}`;
 
@@ -53,8 +54,9 @@ export function portfolioEmbed(symbols, scan) {
   const lines = items.slice(0, 25).map((it) => {
     const sym = it.symbol || it.ticker || '?';
     const status = (it.status || it.compliance || it.verdict || '?').toString();
-    const ok = /pass|compliant|halal/i.test(status);
-    const bad = /fail|non-?compliant|haram/i.test(status);
+    // Order matters: "non-compliant" contains "compliant", so check fail first.
+    const bad = /fail|non[\s-]?compliant|haram|reject/i.test(status);
+    const ok = !bad && /pass|compliant|halal|accept/i.test(status);
     const icon = ok ? '✅' : bad ? '❌' : '⚠️';
     return `${icon} \`${sym.padEnd(6)}\` ${status}`;
   });
@@ -82,8 +84,9 @@ export function trendingEmbed(trending) {
     const name = it.name || it.shortName || '';
     const price = it.price ?? it.regularMarketPrice;
     const status = (it.status || it.compliance || '').toString();
-    const ok = /pass|compliant|halal/i.test(status);
-    const bad = /fail|non-?compliant|haram/i.test(status);
+    // Order matters: "non-compliant" contains "compliant", so check fail first.
+    const bad = /fail|non[\s-]?compliant|haram|reject/i.test(status);
+    const ok = !bad && /pass|compliant|halal|accept/i.test(status);
     const icon = ok ? '✅' : bad ? '❌' : status ? '⚠️' : '•';
     return `${icon} \`${sym.padEnd(6)}\` ${name}${price ? ` — $${price}` : ''}`;
   });
