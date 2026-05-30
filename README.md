@@ -106,6 +106,20 @@ This bot returns automated screening results from public methodologies; it is **
 
 ---
 
+## Learn more
+
+- [Halal Terminal blog](https://www.halalterminal.com/blog)
+- [What is Islamic finance?](https://www.halalterminal.com/research/what-is-islamic-finance)
+- [Shariah-compliant ETFs compared (2026)](https://www.halalterminal.com/research/sharia-etf-comprehensive-analysis)
+- [Is my stock halal? Screener](https://www.halalterminal.com/stocks)
+- [API reference](https://api.halalterminal.com/api-reference)
+
+## Part of the Halal Terminal ecosystem
+
+[Website](https://www.halalterminal.com) · [API](https://api.halalterminal.com/api-reference) · [Python SDK](https://github.com/goww7/halalterminal-sdk-python) · [JS SDK](https://github.com/goww7/halalterminal-sdk-js) · [MCP server](https://github.com/goww7/halalterminal-mcp) · [Claude plugin](https://github.com/goww7/halalterminal-claude-skills) · [TradingView indicator](https://github.com/goww7/halal-pine) · [Portfolio tracker](https://github.com/goww7/halal-portfolio-tracker)
+
+---
+
 ## Related projects
 
 Other open-source tools in the Halal Terminal ecosystem:
