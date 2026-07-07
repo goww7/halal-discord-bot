@@ -143,5 +143,5 @@ MIT — see [LICENSE](LICENSE).
 <p align="center">
   Built with ❤️ on top of <a href="https://halalterminal.com">Halal Terminal</a>.
   <br>
-  <sub>Get a free API key — 50 requests/month, no credit card.</sub>
+  <sub>Get a free API key — 500 tokens/month, no credit card.</sub>
 </p>
